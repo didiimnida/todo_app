@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
         elsif @user.authenticate params[:password]
             session[:current_user_id] = @user.id
-            flash[:notice] = "Thank you for logging in, #{@user.username}."
+            flash[:notice] = "Thank you for logging in, #{@user.email}."
 
         else
             flash[:error] = "Incorrect password."
