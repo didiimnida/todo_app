@@ -1,55 +1,68 @@
-<%= form_for User.new do |f| %>
+<div class="row">
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-5">
+        <h1>Sign Up</h1>
+ 
+        <%= form_for User.new do |f| %>
 
-    <% if @user %>
+            <% if @user %>
 
-        <%= render partial: "shared/form_error_list", locals: { model: @user } %>
+                <%= render partial: "shared/form_error_list", locals: { model: @user } %>
 
-    <% end %>
+            <% end %>
 
-    <p>
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-    </p>
+            <p>
+                <%= f.label :email %><br>
+                <%= f.text_field :email %>
+            </p>
 
-    <p>
-        <%= f.label :mobile %><br>
-        <%= f.text_field :mobile %>
-    </p>
+            <p>
+                <%= f.label :mobile %><br>
+                <%= f.text_field :mobile %>
+            </p>
 
-    <p>
-        <%= f.label :password %><br>
-        <%= f.password_field :password %>
-    </p>
+            <p>
+                <%= f.label :password %><br>
+                <%= f.password_field :password %>
+            </p>
 
-    <p>
-        <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation %>
-    </p>
-
-    <p>
-        <%= f.submit%>
-    </p>
-
-<% end %>
-
-
-<h1>Login</h1>
+            <p>
+                <%= f.label :password_confirmation %><br>
+                <%= f.password_field :password_confirmation %>
+            </p>
 
 
-<%= form_tag sessions_path do %>
+            <p>
+                <%= f.submit class: "btn btn-primary" %>
+            </p>
 
-    <p>
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
-    </p>
+        <% end %>
+    </div>
+    <div class="col-lg-5">
+    </div>
 
-    <p>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-    </p>
+    <div class="col-lg-5">
+            <h1>Already a User?</h1>
 
-    <p>
-        <%= submit_tag "Login" %>
-    </p>
+            <%= form_tag sessions_path do %>
 
-<% end %>
+            <p>
+                <%= label_tag :email %><br/>
+                <%= text_field_tag :email %>
+            </p>
+                
+            <p>
+                <%= label_tag :password %> <br/>
+                <%= password_field_tag :password %>
+            </p>
+            
+            <p>
+                <%= submit_tag "login", class: "btn btn-success" %>
+            </p>
+            
+            <% end %>
+    </div>
+    <div class="col-lg-5">
+    </div>
+</div>
