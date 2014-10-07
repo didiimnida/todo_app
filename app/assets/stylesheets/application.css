@@ -64,3 +64,11 @@ ul li {
 	padding-bottom: 100px;
 }
 
+#navbar{
+	font-size: 25px;
+}
+
+#logout{
+	position: bottom;
+}
+
