@@ -7,8 +7,9 @@ class UsersController < ApplicationController
 		if @user.save
             flash[:notice] = "Your account has been created! Please login."
             email = @user.email
-            binding.pry
+            mobile = @user.mobile
             send_email(email)
+            send_sms(mobile)
             redirect_to root_path
         else
             # Re-render the template that led here. Errors will be displayed
