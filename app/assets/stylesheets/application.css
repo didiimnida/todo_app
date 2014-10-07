@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron {
+  background-color: #079;
+  background-size: cover;
+
+}
+
+#jumbotron_text{
+padding: 5px; 
+background-color: transparent;
+}
+
+body {
+  background-image:url(http://i.imgur.com/sc18T80.png);
+  
+  font-family: 'Oswald', 'Futura', sans-serif;
+  margin: 0px; 
+  padding: 0px;}
