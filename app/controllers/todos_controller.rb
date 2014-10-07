@@ -1,19 +1,22 @@
 class TodosController < ApplicationController
+  include TodosHelper
   def index
-  	@todos = Todo.all
-    # if todo.user_id == session[:current_user_id]
-    # end
-    #Where put this?  
+  	#@todos = Todo.all #ALL USERS.  
+    @todos = current_user.todos
   end
 
   def new 
   	@todo = Todo.new
+    #Not using this method anymore. Just for testing. 
   end
 
   def create
-  	@todo = Todo.new(todo_params)
-	  @todo.completed = false
-    @todo.user_id = session[:current_user_id]
+  	#@todo = Todo.new(todo_params) #ANY NEW.
+    #@todo.user_id = session[:current_user_id] #ADD USER_ID. 
+	  
+    @todo = current_user.todos.new(todo_params)
+    @todo.completed = false
+    
     respond_to do |format|
   		if @todo.save
         format.html{redirect_to todos_path}

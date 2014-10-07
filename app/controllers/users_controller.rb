@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
+	include UsersHelper
 	
 	def create
 		@user = User.new user_params
 		
 		if @user.save
             flash[:notice] = "Your account has been created! Please login."
-
+            email = @user.email
+            mobile = @user.mobile
+            send_email(email)
+            send_sms(mobile)
             redirect_to root_path
         else
             # Re-render the template that led here. Errors will be displayed

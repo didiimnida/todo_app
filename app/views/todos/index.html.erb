@@ -10,6 +10,7 @@
 
 <div class="container-fluid">
 
+
   <h1 class="header">Todo Dashboard</h1>
 	<div class="row center-block">
 		<div class="col-sm-4 col-sm-offset-4 ">
@@ -37,6 +38,7 @@
 		</ul>
 	</div>
 
+
 	<div class="row logout">
 		<%= link_to 'Logout' , sessions_path, method: :delete %><br />
 		Logged in as <%= current_user.email %>
@@ -61,7 +63,8 @@ $('button').click(function(){
 
 	request.done(function(data){
 		$('ul').append("<li data-todo-id= '" + data.id + "'>" + "<input type ='checkbox'> " + data.description + "<span>&times;</span></li>")
-		console.log(data);
+		//console.log(data);
+		$('input').val() = "";
 	});
 
 	request.fail(function(data){
