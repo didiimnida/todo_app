@@ -1,18 +1,26 @@
-<h1>Todo List</h1>
+<h1>Todo Dashboard</h1>
 
-<input type="text">
-<button>Add Todo</button>
+<div class="container">
+	<h3>Category</h3>
 
-<ul>
-	<%@todos.each do |todo| %>
-	<%if todo.user_id == session[:current_user_id]%>
-	<li data-todo-id="<%= todo.id %>">  <input type="checkbox" <%if todo.completed%>checked<%end%>>
-	<%=todo.description%> 
-	<span>&times;</span>
-	</li>
-	<%end%>
-	<% end %>
-</ul>
+	<input type="text" class="form-control"> <br/>
+	<button class= "btn btn-info">Add Todo</button>
+
+	<ul>
+		<%@todos.each do |todo| %>
+
+		<%if todo.user_id == session[:current_user_id]%>
+
+		<li data-todo-id="<%= todo.id %>">  
+			<input type="checkbox" <%if todo.completed%>checked<%end%>>
+			<%=todo.description%> 
+			<span>&times;</span>
+		</li>
+		<%end%>
+
+		<% end %>
+	</ul>
+</div>
 
 
 <%= link_to 'Logout' , sessions_path, method: :delete %><br />
@@ -79,6 +87,7 @@ $('ul').click(function(e){
 
 		request.done(function(data){
 			console.log(data)
+
 		});
 	}
 
