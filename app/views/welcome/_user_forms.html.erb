@@ -1,16 +1,12 @@
 
 <div class="jumbotron">
-<h1 id="jumbotron_text"></h1>
+<h1 id="jumbotron_text">WELCOME TO THE REMINDER APP!</h1>
 </div>
 <div class="row">
 
-    <div class="col-lg-5">
-
-    </div>
-
     
-       <div class="col-lg-5">
-            <h1>Sign Up</h1>
+       
+            <h1>Create Account</h1>
      
             <%= form_for User.new do |f| %>
 
@@ -44,15 +40,18 @@
                     <%= f.submit class: "btn btn-primary" %>
                 </p>
 
+
             <% end %>
 
-        </div>
+        
+
+</div>    
+    
 
     
-    <div class="col-lg-5">
-    </div>
+<div class="row" id="bot_row">
 
-    <div class="col-lg-5">
+    
             <h1>Already a User?</h1>
 
             <%= form_tag sessions_path do %>
@@ -72,10 +71,7 @@
             </p>
             
             <% end %>
-    </div>
 
-    <div class="col-lg-5">
 
-    </div>
-
+    
 </div>

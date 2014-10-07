@@ -1,22 +1,35 @@
-<h1>Todo List</h1>
+<div class="jumbotron">
+<h1 id="jumbotron_text"></h1>
+</div>
 
-<input type="text">
-<button>Add Todo</button>
+<h1 class="header">Todo Dashboard</h1>
 
-<ul>
-	<%@todos.each do |todo| %>
-	<%if todo.user_id == session[:current_user_id]%>
-	<li data-todo-id="<%= todo.id %>">  <input type="checkbox" <%if todo.completed%>checked<%end%>>
-	<%=todo.description%> 
-	<span>&times;</span>
-	</li>
-	<%end%>
-	<% end %>
-</ul>
+<div class="container">
+	<h3>Category</h3>
 
+	<input type="text" class="form-control"> <br/>
+	<button class= "btn btn-info">Add Todo</button>
 
-<%= link_to 'Logout' , sessions_path, method: :delete %><br />
-Logged in as <%= current_user.email %>
+	<ul>
+		<%@todos.each do |todo| %>
+
+		<%if todo.user_id == session[:current_user_id]%>
+
+		<li data-todo-id="<%= todo.id %>">  
+			<input type="checkbox" <%if todo.completed%>checked<%end%>>
+			<%=todo.description%> 
+			<span>&times;</span>
+		</li>
+		<%end%>
+
+		<% end %>
+	</ul>
+</div>
+
+<div class="logout">
+	<%= link_to 'Logout' , sessions_path, method: :delete %><br />
+	Logged in as <%= current_user.email %>
+</div>
 
 <script type ="text/javascript">
 $('button').click(function(){
@@ -79,6 +92,7 @@ $('ul').click(function(e){
 
 		request.done(function(data){
 			console.log(data)
+
 		});
 	}
 

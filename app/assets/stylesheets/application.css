@@ -1,32 +1,66 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 .jumbotron {
   background-color: #079;
   background-size: cover;
-
 }
 
 #jumbotron_text{
 padding: 5px; 
 background-color: transparent;
+color: white;
+font-family: 'Open Sans Condensed', sans-serif;
 }
 
 body {
-  background-image:url(http://i.imgur.com/sc18T80.png);
-  
+  background-image:url(http://i.imgur.com/4uV93CR.png);
   font-family: 'Oswald', 'Futura', sans-serif;
   margin: 0px; 
-  padding: 0px;}
+  padding: 0px;
+}
+  
+.header{
+	text-align: center;
+}
+  
+
+
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+
+ul {
+  margin:20px 0;
+  padding:0;
+}
+
+ul li {
+  width:100%;
+  list-style-type: none;
+  background:#eee;
+  color:#666;
+  margin-bottom:1px;
+  padding:8px 20px;
+  font-size:22px;
+  border-radius: 5px
+}
+
+.container{
+	max-width:400px;
+  	margin:0 auto;
+	border: 5px solid #eee;
+	border-radius: 10px;
+	text-align: center;
+}
+
+
+
+.row{ 
+	text-align: center;
+	padding-bottom: 20px;
+}
+#bot_row{
+	padding-bottom: 100px;
+}
+
