@@ -14,3 +14,35 @@
  *= require_self
  */
 
+
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body {
+  max-width:320px;
+  margin:0 auto;
+}
+
+ul {
+  margin:20px 0;
+  padding:0;
+}
+
+ul li {
+  width:100%;
+  list-style-type: none;
+  background:#eee;
+  color:#666;
+  margin-bottom:1px;
+  padding:8px 20px;
+  font-size:22px;
+  border-radius: 5px
+}
+
+.container{
+	max-width:400px;
+  	margin:0 auto;
+	border: 5px solid #eee;
+	border-radius: 10px;
+}
