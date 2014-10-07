@@ -43,15 +43,20 @@ ul li {
   margin-bottom:1px;
   padding:8px 20px;
   font-size:22px;
-  border-radius: 5px
+  border-radius: 5px;
+  border:2px solid #ddd;
 }
 
-.container{
+.scroll{
 	max-width:400px;
+	max-height: 400px;
+	min-height: 400px;
+	overflow-y: scroll;
   	margin:0 auto;
 	border: 5px solid #eee;
 	border-radius: 10px;
 	text-align: center;
+	background: #eee;
 }
 
 
@@ -69,6 +74,9 @@ ul li {
 }
 
 #logout{
-	position: bottom;
+	margin-top: 200px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 }
 

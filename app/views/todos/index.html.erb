@@ -1,34 +1,47 @@
 <div class="jumbotron">
-<h1 id="jumbotron_text"></h1>
+	<h1 id="jumbotron_text">
+  </h1>
+ 	<div  class="btn-group btn-group-justified">
+		<a href="#" id="navbar" class="btn btn-default">About Us</a>
+	  <a href="#" id="navbar" class="btn btn-default">Todos</a>
+	  <a href="#" id="navbar" class="btn btn-default">Something else</a>
+  </div>
 </div>
 
-<h1 class="header">Todo Dashboard</h1>
+<div class="container-fluid">
 
-<div class="container">
-	<h3>Category</h3>
+  <h1 class="header">Todo Dashboard</h1>
+	<div class="row center-block">
+		<div class="col-sm-4 col-sm-offset-4 ">
+      <h3>Category</h3>
 
-	<input type="text" class="form-control"> <br/>
-	<button class= "btn btn-info">Add Todo</button>
+	    <input type="text" class="form-control"> <br/>
+	    <button class= "btn btn-info">Add Todo</button>
+	  </div>
+	</div>
 
-	<ul>
-		<%@todos.each do |todo| %>
+	<div class="scroll">
+		<ul>
+			<%@todos.each do |todo| %>
 
-		<%if todo.user_id == session[:current_user_id]%>
+			<%if todo.user_id == session[:current_user_id]%>
 
-		<li data-todo-id="<%= todo.id %>">  
-			<input type="checkbox" <%if todo.completed%>checked<%end%>>
-			<%=todo.description%> 
-			<span>&times;</span>
-		</li>
-		<%end%>
+			<li data-todo-id="<%= todo.id %>">  
+				<input type="checkbox" <%if todo.completed%>checked<%end%>>
+				<%=todo.description%> 
+				<span>&times;</span>
+			</li>
+			<%end%>
 
-		<% end %>
-	</ul>
-</div>
+			<% end %>
+		</ul>
+	</div>
 
-<div class="logout">
-	<%= link_to 'Logout' , sessions_path, method: :delete %><br />
-	Logged in as <%= current_user.email %>
+	<div class="row logout">
+		<%= link_to 'Logout' , sessions_path, method: :delete %><br />
+		Logged in as <%= current_user.email %>
+	</div>
+
 </div>
 
 <script type ="text/javascript">
@@ -97,6 +110,4 @@ $('ul').click(function(e){
 	}
 
 });
-
-
 </script>
