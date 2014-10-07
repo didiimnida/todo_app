@@ -1,0 +1,18 @@
+Logged in as <%= current_user.email %>.<br />
+<h1>Todo List</h1>
+
+<input type="text">
+<button>Add Todo</button>
+
+<!-- Adding the data-todo-id allows you to send the data into the ajax.  -->
+<ul>
+	<%@todos.each do |todo| %>
+	<li data-todo-id="<%= todo.id %>">  <input type="checkbox" <%if todo.completed%>checked<%end%>>
+	<%=todo.description%> 
+	<span>&times;</span>
+	</li>
+	<% end %>
+</ul>
+
+<%= link_to 'Add Todo', new_todo_path, method: :get %><br />
+<%= link_to 'Logout', sessions_path, method: :delete %>

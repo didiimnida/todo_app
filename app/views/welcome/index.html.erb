@@ -1,6 +1,8 @@
 <%if logged_in? %>
-Logged in as <%= current_user.email %>.
-<%= link_to 'Logout', sessions_path, method: :delete %>
+
+<%= link_to 'Index', todos_path, method: :get %>
+<!-- Why can't I redirect this or render this to the todos#index?
+ -->
 <%else %>
 <%= render partial: "welcome/user_forms" %>
 <%end%> 
