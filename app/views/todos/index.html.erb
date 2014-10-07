@@ -1,7 +1,8 @@
 <h1>Todo Dashboard</h1>
 
 <div class="container">
-	<h3>Category</h3>
+	<!-- Want user to be able to update this.  -->
+	<h3>Category</h3> 
 
 	<input type="text" class="form-control"> <br/>
 	<button class= "btn btn-info">Add Todo</button>
@@ -9,15 +10,12 @@
 	<ul>
 		<%@todos.each do |todo| %>
 
-		<%if todo.user_id == session[:current_user_id]%>
-
 		<li data-todo-id="<%= todo.id %>">  
 			<input type="checkbox" <%if todo.completed%>checked<%end%>>
 			<%=todo.description%> 
 			<span>&times;</span>
 		</li>
-		<%end%>
-
+		
 		<% end %>
 	</ul>
 </div>
@@ -43,7 +41,8 @@ $('button').click(function(){
 
 	request.done(function(data){
 		$('ul').append("<li data-todo-id= '" + data.id + "'>" + "<input type ='checkbox'> " + data.description + "<span>&times;</span></li>")
-		console.log(data);
+		//console.log(data);
+		$('input').val() = "";
 	});
 
 	request.fail(function(data){
