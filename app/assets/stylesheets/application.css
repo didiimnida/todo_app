@@ -1,34 +1,9 @@
-
-.jumbotron {
-  background-color: #079;
-  background-size: cover;
-}
-
-#jumbotron_text{
-padding: 5px; 
-background-color: transparent;
-color: white;
-font-family: 'Open Sans Condensed', sans-serif;
-}
-
 body {
   background-image:url(http://i.imgur.com/4uV93CR.png);
   font-family: 'Oswald', 'Futura', sans-serif;
   margin: 0px; 
   padding: 0px;
 }
-  
-.header{
-	text-align: center;
-}
-  
-
-
-* {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-
 
 ul {
   margin:20px 0;
@@ -45,8 +20,28 @@ ul li {
   font-size:22px;
   border-radius: 5px;
   border:2px solid #ddd;
+  text-align: left;
+}
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
+.jumbotron {
+  background-color: #079;
+  background-size: cover;
+}
+
+#jumbotron_text{
+padding: 5px; 
+background-color: transparent;
+color: white;
+font-family: 'Oswald', sans-serif;;
+}
+ 
+.header{
+	text-align: center;
+}
+ 
 .scroll{
 	max-width:400px;
 	max-height: 400px;
@@ -58,8 +53,6 @@ ul li {
 	text-align: center;
 	background: #eee;
 }
-
-
 
 .row{ 
 	text-align: center;
@@ -78,5 +71,9 @@ ul li {
 	position: fixed;
 	left: 0;
 	bottom: 0;
+}
+
+#menu_bar{
+	position: bottom;
 }
 

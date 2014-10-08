@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	<h1 id="jumbotron_text">
   </h1>
- 	<div  class="btn-group btn-group-justified">
+ 	<div id="menu_bar" class="btn-group btn-group-justified">
 		<a href="#" id="navbar" class="btn btn-default">About Us</a>
 	  <a href="#" id="navbar" class="btn btn-default">Todos</a>
 	  <a href="#" id="navbar" class="btn btn-default">Something else</a>
@@ -30,7 +30,8 @@
 			<li data-todo-id="<%= todo.id %>">  
 				<input type="checkbox" <%if todo.completed%>checked<%end%>>
 				<%=todo.description%> 
-				<span>&times;</span>
+				<!-- <span></span> -->
+        <span class="glyphicon glyphicon-trash"></span>
 			</li>
 			<%end%>
 
@@ -40,77 +41,81 @@
 
 
 	<div class="row logout">
-		<%= link_to 'Logout' , sessions_path, method: :delete %><br />
+		<%= link_to 'Logout' , sessions_path, method: :delete %><br/>
 		Logged in as <%= current_user.email %>
 	</div>
 
 </div>
 
 <script type ="text/javascript">
-$('button').click(function(){
-	var desc = $('input').val();
+  
+  $('button').click(function(){
+    alert("Don't forget to do this, okay!!!");
+    });
 
-	data_hash = {
-		"todo":{"description": desc}
-	}
+  $('button').click(function(){
+  	var desc = $('input').val();
 
-	var request = $.ajax({
-		url: "/todos",
-		type: "POST",
-		data: data_hash,
-		dataType: "json"
-	});
+  	data_hash = {
+  		"todo":{"description": desc}
+  	}
 
-	request.done(function(data){
-		$('ul').append("<li data-todo-id= '" + data.id + "'>" + "<input type ='checkbox'> " + data.description + "<span>&times;</span></li>")
-		//console.log(data);
-		$('input').val() = "";
-	});
+  	var request = $.ajax({
+  		url: "/todos",
+  		type: "POST",
+  		data: data_hash,
+  		dataType: "json"
+  	});
 
-	request.fail(function(data){
-		console.log("FAIL FUNCTION");
-		$('h1').append("<p> There was an error saving your todo</p>")
-	});
+  	request.done(function(data){
+  		$('ul').append("<li data-todo-id= '" + data.id + "'>" + "<input type ='checkbox'> " + data.description + " <span class='glyphicon glyphicon-trash'>  </span></li>")
+  		
+  		$('input').val('') = "";
+  	});
 
-});
+  	request.fail(function(data){
+  		console.log("FAIL FUNCTION");
+  		$('h1').append("<p> There was an error saving your todo</p>")
+  	});
 
+  });
 
-$('ul').click(function(e){
-  	console.log(e.target);
-  	var li = $(e.target).parent();
-	var id = li.data("todo-id");
+  $('ul').click(function(e){
+    	console.log(e.target);
+    	var li = $(e.target).parent();
+  	  var id = li.data("todo-id");
 
-  	if($(e.target).is("span")){
-		var request = $.ajax({
-			url: "/todos/"+id,
-			type: "DELETE",
-			dataType: "json"
-		});
+    	if($(e.target).is("span")){
+  		var request = $.ajax({
+  			url: "/todos/"+id,
+  			type: "DELETE",
+  			dataType: "json"
+  		});
 
-		request.done(function(data){
-			li.remove();
-		});
-	}
+  		request.done(function(data){
+  			li.remove();
+  		});
+  	  }
 
-	if($(e.target).is("input")){
-		var checkbox_value = $(e.target).is(':checked');
-		
-		data_hash = {
-		"todo":{"completed":checkbox_value}
-		}
+  	if($(e.target).is("input")){
+  		var checkbox_value = $(e.target).is(':checked');
+  		
+  		data_hash = {
+  		"todo":{"completed":checkbox_value}
+  		}
 
-		var request = $.ajax({
-			url: "/todos/"+ id,
-			type: "PATCH",
-			data: data_hash,
-			dataType: "json"
-		});
+  		var request = $.ajax({
+  			url: "/todos/"+ id,
+  			type: "PATCH",
+  			data: data_hash,
+  			dataType: "json"
+  		});
 
-		request.done(function(data){
-			console.log(data)
+  		request.done(function(data){
+  			console.log(data)
 
-		});
-	}
-
-});
+  		});
+  	}
+  });
 </script>
+
