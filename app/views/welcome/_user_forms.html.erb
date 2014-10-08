@@ -1,6 +1,10 @@
 <div class="jumbotron">
-  <h1 id="jumbotron_text">WELCOME TO THE REMINDER APP!</h1>
+  <h1 id="jumbotron_text"><span class="glyphicon glyphicon-pencil"> reminder</span></h1>
 </div>
+<div id="menu_bar" class="btn-group btn-group-justified">
+    <%= link_to 'about reminder' , todos_path, :class => 'btn btn-info', id: "news"%>
+  </div>
+
 <div class="row">
   <div class="container" id="create_account">
   <h1>Create Account</h1>
@@ -25,7 +29,7 @@
           <%= f.password_field :password_confirmation, class: "form-control" %>
       </p>
       <p>
-          <%= f.submit class: "btn btn-primary" %>
+          <%= f.submit class: "btn btn-info" %>
       </p>
     <% end %>
   </div>  
@@ -43,7 +47,7 @@
           <%= password_field_tag :password %>
         </p>
         <p>
-          <%= submit_tag "login", class: "btn btn-primary" %>
+          <%= submit_tag "login", class: "btn btn-info" %>
         </p>
       <% end %> 
   </div>    
