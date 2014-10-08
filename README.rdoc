@@ -1,6 +1,8 @@
  Reminder App:
  Our application allows users to sign into a private account to create “todos” which will be visually rendered on an interactive personal dashboard and sent to users through SMS and/or voice at user-determined times.  
 
+ Day 3.
+
 Things you may want to cover:
 
 * Ruby version
