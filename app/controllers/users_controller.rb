@@ -9,7 +9,8 @@ class UsersController < ApplicationController
             email = @user.email
             mobile = @user.mobile
             send_email(email)
-            send_sms(mobile)
+            #Twilio turned off for now, authentication issues. 
+            #send_sms(mobile)
             redirect_to root_path
         else
             # Re-render the template that led here. Errors will be displayed
