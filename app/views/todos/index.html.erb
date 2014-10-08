@@ -1,16 +1,18 @@
 <div class="jumbotron">
-	<h1 id="jumbotron_text">WELCOME TO THE REMINDER APP!</h1>
- 	<div id="menu_bar" class="btn-group btn-group-justified">
-		<a href="#" id="navbar" class="btn btn-default">About Us</a>
-	  <a href="#" id="navbar" class="btn btn-default">Todos</a>
-	  <a href="#" id="navbar" class="btn btn-default">Something else</a>
-  </div>
+	<h1 id="jumbotron_text">WELCOME TO THE REMINDER APP </br> Currently logged in as <%= current_user.email %>!</h1>
+ 
 </div>
 
+  <div id="menu_bar" class="btn-group btn-group-justified">
+    <a href="#" id="navbar" class="btn btn-default">About Us</a>
+    <a href="#" id="navbar" class="btn btn-default">Send Email</a>
+    <a href="#" id="navbar" class="btn btn-default">Send Text</a>
+    <a href="#" id="navbar" class="btn btn-default">Logout</a>
+  </div>
 <div class="container-fluid">
 
   <h1 class="header">Todo Dashboard</h1>
-	<div class="row center-block">
+	<div class="row center-block" id="category_input">
 		<div class="col-sm-4 col-sm-offset-4 ">
       <h3>Category</h3>
 
@@ -38,9 +40,8 @@
 	</div>
 
 
-	<div class="row logout">
-		<%= link_to 'Logout' , sessions_path, method: :delete %><br/>
-		Logged in as <%= current_user.email %>
+	<div class="row" id="logout">
+		<%= link_to 'Logout' , sessions_path, method: :delete, :class => 'btn btn-danger btn-mini' %>
 	</div>
 
 </div>
