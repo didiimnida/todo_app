@@ -8,9 +8,8 @@ class UsersController < ApplicationController
             flash[:notice] = "Your account has been created! Please login."
             email = @user.email
             mobile = @user.mobile
-            send_email(email)
-            #Twilio turned off for now, authentication issues. 
-            #send_sms(mobile)
+            send_email(email) 
+            send_sms(mobile)
             redirect_to root_path
         else
             # Re-render the template that led here. Errors will be displayed

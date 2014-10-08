@@ -1,23 +1,22 @@
 <div class="jumbotron">
-	<h1 id="jumbotron_text">WELCOME TO THE REMINDER APP </br> Currently logged in as <%= current_user.email %>!</h1>
+	<h1 id="jumbotron_text"><span class="glyphicon glyphicon-pencil"> reminder</span></h1>
  
 </div>
 
   <div id="menu_bar" class="btn-group btn-group-justified">
-    <a href="#" id="navbar" class="btn btn-default">About Us</a>
-    <a href="#" id="navbar" class="btn btn-default">Send Email</a>
-    <a href="#" id="navbar" class="btn btn-default">Send Text</a>
-    <a href="#" id="navbar" class="btn btn-default">Logout</a>
+    <%= link_to 'dashboard' , todos_path, :class => 'btn btn-info', id: "news"%>
+    <%= link_to 'settings' , todos_path, :class => 'btn btn-info'%>
+    <%= link_to 'about' , todos_path, :class => 'btn btn-info' %>
+    <%= link_to 'logout' , sessions_path, method: :delete, :class => 'btn btn-info' %>
   </div>
 <div class="container-fluid">
 
-  <h1 class="header">Todo Dashboard</h1>
 	<div class="row center-block" id="category_input">
 		<div class="col-sm-4 col-sm-offset-4 ">
-      <h3>Category</h3>
+		<br />
 
 	    <input type="text" class="form-control"> <br/>
-	    <button class= "btn btn-primary">Add</button>
+	    <button class= "btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
 	  </div>
 	</div>
 
@@ -30,7 +29,6 @@
 			<li data-todo-id="<%= todo.id %>">  
 				<input type="checkbox" <%if todo.completed%>checked<%end%>>
 				<%=todo.description%> 
-				<!-- <span></span> -->
         <span class="glyphicon glyphicon-trash"></span>
 			</li>
 			<%end%>
@@ -39,9 +37,8 @@
 		</ul>
 	</div>
 
+	<br />
+	<br />
 
-	<div class="row" id="logout">
-		<%= link_to 'Logout' , sessions_path, method: :delete, :class => 'btn btn-danger btn-mini' %>
-	</div>
 
 </div>
