@@ -3,7 +3,7 @@ desc "This task is called by the Heroku scheduler add-on"
 task :send_reminders => :environment do
 	puts "Sending sms..."
   	@todos = Todo.all #Get the todos based on the time of checking.  
-  	#If todos.send_at is between Time.now and + 10 minutes.  
+  	#If todos.send_at is between Time.now and the past and not delivered.  
 
   	#If todos.delivered != true...    
   	@todos.each do |todo|

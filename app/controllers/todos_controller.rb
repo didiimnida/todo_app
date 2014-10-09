@@ -23,9 +23,9 @@ class TodosController < ApplicationController
     month = params[:todo][:month].to_i
     year = params[:todo][:year].to_i
 
-    date = DateTime.new(year, month, day, hour, minute)
-    # @todo.send = date
-    # @todo.send = "2014-10-09 21:36:27"
+    date = Time.new(year, month, day, hour, minute)
+    
+    @todo.send_at = date
 
     respond_to do |format|
   		if @todo.save
