@@ -5,8 +5,8 @@
 
   <div id="menu_bar" class="btn-group btn-group-justified">
     <%= link_to 'dashboard' , todos_path, :class => 'btn btn-info', id: "news"%>
-    <%= link_to 'settings' , todos_path, :class => 'btn btn-info', id: "setting"%>
-    <%= link_to 'about' , todos_path, :class => 'btn btn-info', id: "about" %>
+    <%= link_to 'settings' , user_path(current_user.id), :class => 'btn btn-info', id: "setting"%>
+    <%= link_to 'about' , about_path, :class => 'btn btn-info', id: "about" %>
     <%= link_to 'logout' , sessions_path, method: :delete, :class => 'btn btn-info', id: "logout" %>
   </div>
 <div class="container-fluid">

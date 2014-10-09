@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :todos
   #Need to add in associations here. 
+  get "/about" => "welcome#about"
 
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
