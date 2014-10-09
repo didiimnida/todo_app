@@ -1,5 +1,3 @@
-
-    
 $(function() {
 
 $('button').click(function(){
@@ -7,10 +5,11 @@ $('button').click(function(){
 	var day = $('#date_day').val();
 	var hour = $('#date_hour').val();
 	var minute = $('#date_minute').val();
-
-
+	var month = $('#date_month').val();
+	var year = $('#date_year').val();
+	console.log(year);
 	data_hash = {
-		"todo":{"description": desc, day: day, hour: hour, minute: minute}
+		"todo":{"description": desc, day: day, hour: hour, minute: minute, month: month, year: year}
 	}
 
 	var request = $.ajax({

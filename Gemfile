@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 #Use this in development for including local variables. 
 gem 'dotenv-rails', :groups => [:development, :test]
 #Use this in development for testing Ruby code.
-gem 'pry'
+gem 'pry-rails'
 #Use this for fine-grained scheduling. 
 #gem 'clockwork'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

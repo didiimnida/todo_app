@@ -1,6 +1,5 @@
 <div class="jumbotron">
-	<h1 id="jumbotron_text"><span class="glyphicon glyphicon-pencil">RememoApp</span></h1>
- 
+	<h1 id="jumbotron_text">to.do.or.not.to.do. <span class="glyphicon glyphicon-pencil"></span></h1>
 </div>
 
   <div id="menu_bar" class="btn-group btn-group-justified">
@@ -14,44 +13,20 @@
 	<div class="row center-block" id="category_input">
 
 		<div class="col-sm-4 col-sm-offset-4 "><br />
-		
-			
-				<h4>I need to...</h4>
+
+				<h4>I need to do... <span class="glyphicon glyphicon-pencil"></span></h4>
 			    <input type="text" class="form-control"> <br/>
-			    <h4>Send reminder in:</h4>
-		    			<h5> days:<%= select_day(Date.today)%></h5>
-		    			<h5> hours:<%= select_hour(Time.now)%></h5>
- 		    			<h5>mins:<%= select_minute(Time.now)%></h5>
-
-
-		    			<!-- <select class="form-control options" id="minutes">
-					      <option>Minutes:</option>
-					      <% for i in (30..120).step(15)%>
-					        <option><%=i.to_s + " minutes" %></option>
-					      <% end %>
-					    </select>
-		    			
-		    			<select class="form-control options" id="hours">
-					      <option>Hours:</option>
-					      <% for i in 2..23%>
-					        <option value=<% "for i in 2..23"%>>select_hour(Time.now + 6.hours)</option>
-					      <% end %>
-					    </select>
-
-					    <select class="form-control options" id="days">
-					      <option>Days:</option>
-					      <% for i in 1..7%>
-					        <option><%=i.to_s + " days" %></option>
-					      <% end %>
-					    </select>
-					     -->
-					    <br /><br />
-					    <!-- when this button is pushed is pushed we what the value to be saved and
-					    stored  -->
+			    <div class="time">
+			    <h4><span class="glyphicon glyphicon-time"></span> Send at:</h4>
+			    		<h5> <%= select_hour(Time.now)%> H: <%= select_minute(Time.now)%> M</h5>
+ 		    	 <h4><span class="glyphicon glyphicon-calendar"></span> on:</h4>	
+ 		    			<h5> <%= select_month(Date.today)%> <%= select_day(Date.today)%> <h5>
+ 		    				<h5><%= select_year(Date.today)%> </h5>
+		    	</div>
+		    	<br />
+		    		
 			<button class= "btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
-
 			  
-
 	  </div>
 
 	</div>
