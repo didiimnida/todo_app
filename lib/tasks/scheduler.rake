@@ -8,10 +8,17 @@ task :send_reminders => :environment do
   	@todos.each do |todo|
 		puts todo.description
 	end
-	
+
+	Todo.test()
+
+	account_sid = ENV['ACCOUNT_SID']
+	auth_token = ENV['AUTH_TOKEN']
+	@client = Twilio::REST::Client.new account_sid, auth_token
+	 
+	message = @client.account.messages.create(:body => "SCHEDULER IS WORKING!",
+		:to => "8165171305",    
+		:from => "+18169120447")   
 end
-
-
 
 # task :uber_api_call => :environment do
 
