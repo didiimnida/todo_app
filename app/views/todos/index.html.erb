@@ -12,34 +12,42 @@
 <div class="container-fluid">
 
 	<div class="row center-block" id="category_input">
-		<div class="col-sm-4 col-sm-offset-4 ">
-		<br />
-		<h4>I need to...</h4>
-	    <input type="text" class="form-control"> <br/>
-	    <h4>Send reminder in:</h4>
-	    			<select class="form-control options" id="minutes">
-				      <option>Minutes:</option>
-				      <% for i in (30..120).step(15)%>
-				        <option><%=i.to_s + " minutes" %></option>
-				      <% end %>
-				    </select>
-	    			
-	    			<select class="form-control options" id="hours">
-				      <option>Hours:</option>
-				      <% for i in 2..47%>
-				        <option><%=i.to_s + " hours" %></option>
-				      <% end %>
-				    </select>
 
-				    <select class="form-control options" id="days">
-				      <option>Days:</option>
-				      <% for i in 2..7%>
-				        <option><%=i.to_s + " days" %></option>
-				      <% end %>
-				    </select>
-				    <br /><br />
-		<button class= "btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>   
+		<div class="col-sm-4 col-sm-offset-4 "><br />
+		
+			
+				<h4>I need to...</h4>
+			    <input type="text" class="form-control"> <br/>
+			    <h4>Send reminder in:</h4>
+		    			
+		    			<select class="form-control options" id="minutes">
+					      <option>Minutes:</option>
+					      <% for i in (30..120).step(15)%>
+					        <option><%=i.to_s + " minutes" %></option>
+					      <% end %>
+					    </select>
+		    			
+		    			<select class="form-control options" id="hours">
+					      <option>Hours:</option>
+					      <% for i in 2..23%>
+					        <option><%=i.to_s + " hours" %></option>
+					      <% end %>
+					    </select>
+
+					    <select class="form-control options" id="days">
+					      <option>Days:</option>
+					      <% for i in 1..7%>
+					        <option><%=i.to_s + " days" %></option>
+					      <% end %>
+					    </select>
+					    
+					    <br /><br />
+			<button class= "btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
+
+			  
+
 	  </div>
+
 	</div>
 
 	<div class="scroll">
