@@ -1,6 +1,6 @@
 body {
   background-image:url(http://i.imgur.com/4uV93CR.png);
-  font-family: 'Oswald', 'Futura', sans-serif;
+  font-family: 'Shadows Into Light', sans-serif;
   margin: 0px; 
   padding: 0px;
 }
@@ -24,7 +24,7 @@ ul li {
   list-style-type: none;
   background:#fff;
 
-  color:#666;
+  /*color:#666;*/
   margin-bottom:10px;
 
   padding:8px 20px;
@@ -46,10 +46,10 @@ ul li {
 }
 
 #jumbotron_text{
-padding: 5px; 
+padding: 2px; 
 background-color: transparent;
 color: white;
-font-family: 'Oswald', sans-serif;;
+font-family: 'Shadows Into Light', sans-serif;
 margin-bottom: 0px;
 }
  
@@ -62,7 +62,7 @@ margin-bottom: 0px;
 	max-height: 400px;
 	min-height: 400px;
 	overflow-y: scroll;
-  	margin:0 auto;
+  margin:0 auto;
 	/*border: 5px solid #eee;*/
 	/*border-radius: 10px;*/
 	text-align: center;
