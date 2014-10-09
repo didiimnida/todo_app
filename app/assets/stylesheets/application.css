@@ -22,6 +22,7 @@ ul li {
   /*border:5px solid #eee;*/
   text-align: left;
 }
+
 * {
   font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -71,11 +72,6 @@ margin-bottom: 0px;
   margin-bottom: 0px;
 }
 
-#logout{
-	margin-top: 100px;
-	margin-bottom: 0px;
-}
-
 #menu_bar{
 	position: bottom;
   margin-bottom: 0px;
@@ -99,3 +95,30 @@ margin-bottom: 0px;
   max-width: 700px;
 }
 
+.done{
+  text-decoration: line-through;
+}
+
+#setting{
+  background-image: url(https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-2/512/gear_settings_cog_preferences-20.png);
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
+
+#news{
+  background-image: url(http://www.bluebeam.com/us/support/help/revu11-5/Content/Resources/Images/summary.png);
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
+
+#about{
+  background-image: url(http://softball.dixie.org/img/icon_document.png);
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
+
+#logout{
+  background-image: url(https://www.realtylog.com/images/v3/blue-icon-logout.png);
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
