@@ -11,9 +11,8 @@ task :send_reminders => :environment do
 			@user = User.find(id)
 			mobile = @user.mobile
 			description = todo.description
-			Todo.test(mobile, description)
+			Todo.test(mobile, description) #Do you really want to store in the Todo model?
 			#Set todos.delivered == true
 	end
-
 end
 

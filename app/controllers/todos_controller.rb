@@ -16,6 +16,8 @@ class TodosController < ApplicationController
 	  
     @todo = current_user.todos.new(todo_params)
     @todo.completed = false
+    @todo.delivered = false
+    #@todo.send = created_at - interval (Timestamp - interval from form)
     
     respond_to do |format|
   		if @todo.save
@@ -31,6 +33,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     @todo.completed = params[:todo][:completed]
+    @todo.delivered = true
     if @todo.save
       render json: @todo
     end
