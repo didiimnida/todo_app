@@ -34,4 +34,15 @@ module UsersHelper
 			    :from => "+18169120447")   
 		end
 
+		def send_voice(mobile)
+			account_sid = ENV['ACCOUNT_SID']
+			auth_token = ENV['AUTH_TOKEN']
+			@client = Twilio::REST::Client.new account_sid, auth_token
+ 
+			call = @client.account.calls.create(:url => "http://demo.twilio.com/docs/voice.xml",
+    			:to => "8165171305",
+    			:from => "+18169120447")
+				puts call.to
+		end
+
 end

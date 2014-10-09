@@ -18,7 +18,6 @@ $('button').click(function(){
 
 	request.done(function(data){
   		$('ul').append("<li data-todo-id= '" + data.id + "'>" + "<input type ='checkbox'> " + data.description + " <span class='glyphicon glyphicon-trash'>  </span></li>")
-  		
   		$('input').val('') = "";
   	});
 

@@ -5,6 +5,15 @@ body {
   padding: 0px;
 }
 
+h4 {
+  width:100%;
+  list-style-type: none;
+  margin-bottom:1px;
+  color: #079;
+  padding:8px 20px;
+  text-align: center;
+}
+
 ul {
   margin:20px 0;
   padding:0;
@@ -14,8 +23,10 @@ ul li {
   width:100%;
   list-style-type: none;
   background:#fff;
+
   color:#666;
   margin-bottom:10px;
+
   padding:8px 20px;
   font-size:22px;
   border: 3px solid;
