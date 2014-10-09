@@ -38,6 +38,10 @@ gem 'twilio-ruby', '~> 3.12'
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'bootstrap-datepicker-rails'
+
+gem 'jquery-timepicker-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
