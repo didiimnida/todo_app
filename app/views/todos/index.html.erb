@@ -13,17 +13,18 @@
 	<div class="row center-block" id="category_input">
 
 		<div class="col-sm-4 col-sm-offset-4 "><br />
-		
-			
-				<h4>I need to...</h4>
+
+				<h4>I need to do... <span class="glyphicon glyphicon-pencil"></span></h4>
 			    <input type="text" class="form-control"> <br/>
-			    <h4>Send reminder in:</h4>
-
-		    			<h5> days:<%= select_day(Date.today)%></h5>
-		    			<h5> hours:<%= select_hour(Time.now)%></h5>
- 		    			<h5>mins:<%= select_minute(Time.now)%></h5>
-
-
+			    <div class="time">
+			    <h4><span class="glyphicon glyphicon-time"></span> Send at:</h4>
+			    		<h5> <%= select_hour(Time.now)%> H: <%= select_minute(Time.now)%> M</h5>
+ 		    	 <h4><span class="glyphicon glyphicon-calendar"></span> on:</h4>	
+ 		    			<h5> <%= select_month(Date.today)%> <%= select_day(Date.today)%> <h5>
+ 		    				<h5><%= select_year(Date.today)%> </h5>
+		    	</div>
+		    	<br />
+		    		
 			<button class= "btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
 			  
 	  </div>

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 #Use this in development for including local variables. 
 gem 'dotenv-rails', :groups => [:development, :test]
 #Use this in development for testing Ruby code.
-gem 'pry'
+gem 'pry-rails'
 #Use this for fine-grained scheduling. 
 #gem 'clockwork'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,10 +37,6 @@ gem 'typhoeus'
 gem 'twilio-ruby', '~> 3.12'
 # Use unicorn as the app server
 gem 'unicorn'
-
-gem 'bootstrap-datepicker-rails'
-
-gem 'jquery-timepicker-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
