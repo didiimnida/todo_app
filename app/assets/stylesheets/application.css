@@ -15,16 +15,17 @@ ul li {
   list-style-type: none;
   background:#fff;
   color:#666;
-  margin-bottom:1px;
+  margin-bottom:10px;
   padding:8px 20px;
   font-size:22px;
-  border-radius: 5px;
+  border: 3px solid;
+  /*border-radius: 5px;*/
   /*border:5px solid #eee;*/
   text-align: left;
 }
 
 * {
-  font-family: 'Open Sans Condensed', sans-serif;
+  /*font-family: 'Open Sans Condensed', sans-serif;*/
 }
 
 .jumbotron {
@@ -51,10 +52,10 @@ margin-bottom: 0px;
 	min-height: 400px;
 	overflow-y: scroll;
   	margin:0 auto;
-	border: 5px solid #eee;
-	border-radius: 10px;
+	/*border: 5px solid #eee;*/
+	/*border-radius: 10px;*/
 	text-align: center;
-	background: #fff;
+	/*background: #fff;*/
 }
 
 .row{ 
@@ -109,6 +110,7 @@ margin-bottom: 0px;
   background-image: url(http://www.bluebeam.com/us/support/help/revu11-5/Content/Resources/Images/summary.png);
   background-repeat: no-repeat;
   background-position: 4px 4px;
+  border-radius: 0px;
 }
 
 #about{
@@ -121,4 +123,5 @@ margin-bottom: 0px;
   background-image: url(https://www.realtylog.com/images/v3/blue-icon-logout.png);
   background-repeat: no-repeat;
   background-position: 4px 4px;
+  border-radius: 0px;
 }
