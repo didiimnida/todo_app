@@ -1,12 +1,14 @@
-
-    
 $(function() {
 
 $('button').click(function(){
 	var desc = $('input').val();
+	var day = $('#date_day').val();
+	var hour = $('#date_hour').val();
+	var minute = $('#date_minute').val();
+
 
 	data_hash = {
-		"todo":{"description": desc}
+		"todo":{"description": desc, day: day, hour: hour, minute: minute}
 	}
 
 	var request = $.ajax({
