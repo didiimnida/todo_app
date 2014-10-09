@@ -1,4 +1,5 @@
 
+    
 $(function() {
 
 $('button').click(function(){
@@ -27,11 +28,12 @@ $('button').click(function(){
 
 });
 
-
 $('ul').click(function(e){
   	console.log(e.target);
   	var li = $(e.target).parent();
 	var id = li.data("todo-id");
+
+
 
   	if($(e.target).is("span")){
 		var request = $.ajax({
@@ -46,6 +48,11 @@ $('ul').click(function(e){
 	}
 
 	if($(e.target).is("input")){
+		console.log("CLICKED CHECKBOX")
+	
+	    // _text = $("#myDiv").text();
+	    // StrikeThrough(0, li);
+
 		var checkbox_value = $(e.target).is(':checked');
 		
 		data_hash = {
@@ -60,8 +67,10 @@ $('ul').click(function(e){
 		});
 
 		request.done(function(data){
-			console.log(data)
-
+			if(data.completed === true)
+				li.addClass("done")
+			else
+				li.removeClass("done")
 		});
 	}
 
