@@ -4,7 +4,7 @@
 
   <div id="menu_bar" class="btn-group btn-group-justified">
     <%= link_to 'dashboard' , todos_path, :class => 'btn btn-info', id: "news"%>
-    <%= link_to 'settings' , user_path(current_user.id), :class => 'btn btn-info', id: "setting"%>
+    <%= link_to 'settings' , edit_user_path(current_user), :class => 'btn btn-info', id: "setting"%>
     <%= link_to 'about' , about_path, :class => 'btn btn-info', id: "about" %>
     <%= link_to 'logout' , sessions_path, method: :delete, :class => 'btn btn-info', id: "logout" %>
   </div>
@@ -14,7 +14,7 @@
 
 		<div class="col-sm-4 col-sm-offset-4 "><br />
 
-				<h4>I need to do... <span class="glyphicon glyphicon-pencil"></span></h4>
+				<h4>I need to... <span class="glyphicon glyphicon-pencil"></span></h4>
 			    <input type="text" class="form-control"> <br/>
 			    <div class="time">
 			    <h4><span class="glyphicon glyphicon-time"></span> Send at:</h4>
@@ -38,9 +38,9 @@
 			<%if todo.user_id == session[:current_user_id]%>
 
 			<li class="check <% if todo.completed%> done<% end %>"  data-todo-id="<%= todo.id %>">  
-				<input type="checkbox" <%if todo.completed%>checked<%end%>>
+				<input type="checkbox" id="checkborder" <%if todo.completed%>checked<%end%>>
 				<%=todo.description%> 
-        <span class="glyphicon glyphicon-trash"></span>
+        			<span class="glyphicon glyphicon-trash"></span>
 			</li>
 			<%end%>
 

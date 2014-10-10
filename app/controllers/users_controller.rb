@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	
 		if @user.update user_params
-			redirect_to user_path(@user)
+			redirect_to edit_user_path(@user)
 			flash[:notice] = "Your account has been updated!"
 		else
 			render :edit
@@ -36,13 +36,6 @@ class UsersController < ApplicationController
 	def edit
 		@user = current_user
 	end
-
-	def show
-		@user = current_user
-		#Show settings of current user.  
-	end
-
-
 
 	private
 

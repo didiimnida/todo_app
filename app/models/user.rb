@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     validates :password,
 		presence: true,
 		confirmation: true,
-		length: {minimum: 3},
+		length: {minimum: 5},
 		on: :create
 
 end
