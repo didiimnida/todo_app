@@ -31,10 +31,17 @@
           <%= f.password_field :password_confirmation, class: "form-control" %>
       </p>
       <p>
+      	  <%= f.label :Turn_on_voice %> <br>
+      	  <%= f.check_box :voice %>
+      </p>
+      <p>
+      	  <%= f.label :Turn_on_sms %> <br>
+      	  <%= f.check_box :sms %> 
+      </p>
+      <p>
           <%= f.submit class: "btn btn-info" %>
       </p>
     <% end %>
   </div>  
 </div>     
 
-<%= link_to 'Settings', user_path(current_user.id) %>

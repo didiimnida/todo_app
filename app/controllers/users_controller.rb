@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 		#Show settings of current user.  
 	end
 
-	
+
 
 	private
 
@@ -51,7 +51,9 @@ class UsersController < ApplicationController
 			:password,
 			:password_confirmation,
 			:email,
-			:mobile
+			:mobile,
+			:voice,
+			:sms
 			)
 	end
 end
