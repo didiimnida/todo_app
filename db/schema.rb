@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141009221922) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "delivered"
+    t.boolean  "testing"
     t.datetime "send_at"
   end
 

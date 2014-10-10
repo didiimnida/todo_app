@@ -21,6 +21,29 @@ class UsersController < ApplicationController
         end
 	end
 
+	def update
+		@user = User.find(params[:id])
+	
+		if @user.update user_params
+			redirect_to user_path(@user)
+			flash[:notice] = "Your account has been updated!"
+		else
+			render :edit
+		end
+		#Put info into database.
+	end
+
+	def edit
+		@user = current_user
+	end
+
+	def show
+		@user = current_user
+		#Show settings of current user.  
+	end
+
+
+
 	private
 
 	def user_params
@@ -28,7 +51,9 @@ class UsersController < ApplicationController
 			:password,
 			:password_confirmation,
 			:email,
-			:mobile
+			:mobile,
+			:voice,
+			:sms
 			)
 	end
 end
